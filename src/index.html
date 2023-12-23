@@ -128,14 +128,23 @@
             bla.... bla bla bla.... bla bla bla.... bla bla bla.... I’m
             available for hiring.
           </p>
-          <form action="" class="flex flex-col gap-4 text-wd-black">
+          <form
+            onsubmit="onSubmit(event)"
+            method="get"
+            class="flex flex-col gap-4 text-wd-black"
+          >
             <input
               class="py-[14px] pl-4 w-full"
               type="email"
               name="email"
               placeholder="Enter your email"
+              id="subscribe-input"
+              required
             />
-            <button class="bg-primary text-wd-black px-[33px] py-4 w-1/2">
+            <button
+              class="bg-primary text-wd-black px-[33px] py-4 w-1/2"
+              id="subscribe-button"
+            >
               Sucscribe <i class="fa-solid fa-arrow-right"></i>
             </button>
           </form>
@@ -163,5 +172,11 @@
         <div class="mb-6">© 2023, Jane Doe. All Rights Reserved.</div>
       </section>
     </footer>
+
+    <script>
+      function onSubmit(e) {
+        alert("Email : " + e.target.elements.email.value + " is subscribed");
+      }
+    </script>
   </body>
 </html>
